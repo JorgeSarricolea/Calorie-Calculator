@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Calculator</title>
+
+    <!-- JQuery src -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Calorie Calculator</h1>
+    <form id="calculator">
+        <label>How old are you?</label>
+        <input id="userAge" type="number">
+        <label>How tall are you? (cm)</label>
+        <input id="userHeight" type="number" placeholder="Ex. 175">
+        <label>What is your weight? (kg)</label>
+        <input id="userWeight" type="number" placeholder="Ex. 75">
+
+        <h2>How much physical activity do you do?</h2>
+        <select>
+            <option id="option" value="0.25">Little or no physical activity (rest at home)</option>
+            <option id="option" value="0.5">Work in office or student (mostly rest)</option>
+            <option id="option" value="0.7">Sedentary, office work (daily walks)</option>
+            <option id="option" value="1.2">Little or no exercise (1 to 3 days a week)</option>
+            <option id="option" value="1.55">Moderate training (3 - 5 days a week)</option>
+            <option id="option" value="1.725">Intense training (6 - 7 days a week)</option>
+            <option id="option" value="2">Very Intense Training (6 - 7 days a week, 2 times a day)</option>
+        </select>
+        <button id="primary-btn" class="general-submit">submit</button>
+
+        <h2>Caloruc Intake Results</h2>
+        <p>Total intake to maintain weight (daily): <span class="maintainWeight"></span></p>
+        <p>Total intake to gain weight (+1kg): <span class="gainWeight"></span></p>
+        <p>Total intake to lose weight (+1kg): <span class="loseWeight"></span></p>
+
+</body>
+</html>

@@ -23,48 +23,46 @@
     <script src="main.js"></script>
 </head>
 <body id="my-body">
-    <div class="container">
-        <h1>Calorie Calculator</h1>
+    <div id="main-container" class="container">
         <form id="calculator">
-            <div id="gender" class="container">
-                <h2>Choose an option</h2>
-                <label for="option-man">
-                    <input id="option-man" type="radio" name="gender" value="man"> Man
-                </label>
-                <label for="option-woman">
-                    <input id="option-woman" type="radio" name="gender" value="woman"> Woman
-                </label>
-            </div>
             <div id="user-info" class="container">
-                <label>How old are you?</label>
-                <input id="user-age" type="number">
-                <label>How tall are you? (cm)</label>
-                <input id="user-height" type="number" placeholder="Ex. 175">
-                <label>What is your weight? (kg)</label>
-                <input id="user-weight" type="number" placeholder="Ex. 75">
-                <div class="physical-activity">
-                    <h2>How much physical activity do you do?</h2>
-                    <select>
-                        <option id="option" value="1.2">Little or no exercise (1 to 3 days a week)</option>
-                        <option id="option" value="1.55">Moderate training (3 - 5 days a week)</option>
-                        <option id="option" value="1.725">Intense training (6 - 7 days a week)</option>
-                        <option id="option" value="2">Very Intense Training (6 - 7 days a week, 2 times a day)</option>
-                    </select>
+                <h1>Calorie Calculator</h1>
+                <h2>Choose an option</h2>
+                <div class="gender">
+                    <label for="option-man" id="label">
+                        <input id="option-man" type="radio" name="gender" value="man"> Man
+                    </label>
+                    <label for="option-woman" id="label">
+                        <input id="option-woman" type="radio" name="gender" value="woman"> Woman
+                    </label>
                 </div>
-            </div>
-            <div class="buttons">
+                <h2>Complete with your data</h2>
+                <label>How old are you?</label>
+                <input id="user-age" type="number" class="input">
+                <label>How tall are you? (cm)</label>
+                <input id="user-height" type="number" class="input" placeholder="Ex. 175">
+                <label>What is your weight? (kg)</label>
+                <input id="user-weight" type="number" class="input" placeholder="Ex. 75">
+                <h2>How much physical activity do you do?</h2>
+                <select>
+                    <option id="option" value="1.2">Little or no exercise (1 to 3 days a week)</option>
+                    <option id="option" value="1.55">Moderate training (3 - 5 days a week)</option>
+                    <option id="option" value="1.725">Intense training (6 - 7 days a week)</option>
+                    <option id="option" value="2">Very Intense Training (6 - 7 days a week, 2 times a day)</option>
+                </select>
+                <p><span class="error"></span></p>
                 <button id="primary-btn" class="general-submit">Submit</button>
-                <button id="secondary-btn" class="reset">Reset</button>
             </div>
-            <div class="results">
-                <h2>Caloric Intake Results</h2>
-                <p>Body Mass Index: <span class="bmi"></span></p>
-                <p>Required water intake: <span class="water"></span> ml</p>
-                <p>Calories to Add or Remove: <span class="extra-calories"></span> kcal</p>
-                <p>Total intake to maintain weight (daily): <span class="maintain-weight"></span> kcal</p>
-                <p>Total intake to gain weight (+1kg): <span class="gain-weight"></span> kcal</p>
-                <p>Total intake to lose weight (-1kg): <span class="lose-weight"></span> kcal</p>
-                <p>Grams of protein intake: <span class="protein"></span> gr</p>
+            <div id="results" class="container">
+                <h2>Intake Results</h2>
+                <p>Body Mass Index: <strong><span class="bmi"></span></strong></p>
+                <p>Required water intake: <strong><span class="water"></span> ml</strong></p>
+                <p>Calories to Add or Remove: <strong><span class="extra-calories"></span> kcal</strong></p>
+                <p>Total intake to maintain weight (daily): <strong><span class="maintain-weight"></span> kcal</strong></p>
+                <p>Total intake to gain weight (+1kg): <strong><span class="gain-weight"></span> kcal</strong></p>
+                <p>Total intake to lose weight (-1kg): <strong><span class="lose-weight"></span> kcal</strong></p>
+                <p>Grams of protein intake: <strong><span class="protein"></span> gr</strong></p>
+                <button id="secondary-btn" class="reset">Reset</button>
             </div>
         </form>
     </div>

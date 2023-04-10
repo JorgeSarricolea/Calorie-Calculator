@@ -1,14 +1,42 @@
 $(document).ready(function() {
 
-    /*Submit Button
+    $("#results").hide();
+
+    /*Reset Button
     ---------------------*/
 
     $(".reset").click(function() {
         $("#calculator").reset();
     });
 
+    /*Submit Button
+    ---------------------*/
+
     $(".general-submit").click(function(event) {
-            event.preventDefault();
+        event.preventDefault();
+
+        /*Scroll Effect
+        ---------------------*/
+
+        $('html, body').animate({
+            scrollTop: $(document).height()
+        }, 1000);
+
+        /*Checking Fields
+        ---------------------*/
+
+        let errorMessages = "Complete all the fields!";
+
+        if ($('input[type="number"]').val() == null || $("#user-age").val() == "") {
+            $("#results").hide();
+            $(".error").html(errorMessages);
+            setTimeout(function() {
+                $(".error").hide();
+            }, 3000);
+        } else {
+            $("#results").show();
+            $(".error").hide();
+        }
 
         /*Men Options Checked
         ---------------------*/
@@ -82,8 +110,12 @@ $(document).ready(function() {
             const age = parseInt($("#user-age").val());
             const height = parseInt($("#user-height").val());
             const weight = parseInt($("#user-weight").val());
-            const maintainWeight = ((weight*9.6)+(height*1.8)-(age*4.7)+655);
+            const maintainWeight = parseFloat((weight*9.6)+(height*1.8)-(age*4.7)+655);
             const bmi = parseFloat(weight/((height*height)/10000)).toFixed(2);
+            const water = parseFloat((weight/7)*250).toFixed(2);
+
+            $(".bmi").html(bmi);
+            $(".water").html(water);
 
             if ($("select").find(":selected").val() == "1.2") {
                 let newCalories = parseFloat(maintainWeight*1.2).toFixed(2);

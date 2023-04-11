@@ -27,18 +27,22 @@ $(document).ready(function() {
 
         let errorMessages = "Complete all the fields!";
 
-        if ($('input[type="number"]').val() == null || $("#user-age").val() == "") {
-            $("#results").hide();
-            $(".error").html(errorMessages);
-            setTimeout(function() {
-                $(".error").hide();
-            }, 3000);
+        if ($('#user-age').val() == "" ||
+            $('#user-height').val() == "" ||
+            $('#user-weight').val() == "" ||
+            $(".gender input:radio:not(:checked)").length === 2) {
+        $("#results").hide();
+        $(".error").html(errorMessages);
+        $(".error").show();
+        setTimeout(function() {
+            $(".error").hide();
+        }, 3000);
         } else {
             $("#results").show();
             $(".error").hide();
         }
 
-        /*Men Options Checked
+        /*Men Option Checked
         ---------------------*/
 
         if ($("#option-man").is(":checked")) {
@@ -49,9 +53,33 @@ $(document).ready(function() {
             const maintainWeight = parseFloat((weight*10)+(height*6.25)-(age*5)+5).toFixed(2);
             const bmi = parseFloat(weight/((height*height)/10000)).toFixed(2);
             const water = parseFloat((weight/7)*250).toFixed(2);
+            const scaleBMI = parseFloat((bmi*100)/40);
 
             $(".bmi").html(bmi);
             $(".water").html(water);
+
+            /*Progress Bar BMI
+            ---------------------*/
+
+            const progressBar = $("#bmi-bar");
+            progressBar.css("width", scaleBMI + "%");
+            progressBar.css("max-width", "100%")
+            progressBar.text(bmi + "%");
+
+            if (bmi <= 18.5) {
+                progressBar.css('background-color', '#d32300');
+            }
+
+            if (bmi > 18.5 && bmi < 25) {
+                progressBar.css('background-color', '#89bf24');
+            }
+
+            if (bmi >= 25) {
+                progressBar.css('background-color', '#ffd000');
+            }
+
+            /*Options
+            ---------------------*/
 
             if ($("select").find(":selected").val() == "1.2") {
                 let newCalories = parseFloat(maintainWeight*1.2).toFixed(2);
@@ -102,7 +130,7 @@ $(document).ready(function() {
                 $(".protein").html(protein);
             }
 
-        /*Women Options Checked
+        /*Women Option Checked
         ---------------------*/
 
         } else if ($("#option-woman").is(":checked")) {
@@ -116,6 +144,29 @@ $(document).ready(function() {
 
             $(".bmi").html(bmi);
             $(".water").html(water);
+
+            /*Progress Bar BMI
+            ---------------------*/
+
+            const progressBar = $("#bmi-bar");
+            progressBar.css("width", bmi + "%");
+            progressBar.css("max-width", "100%")
+            progressBar.text(bmi + "%");
+
+            if (bmi <= 18.5) {
+                progressBar.css('background-color', '#d32300');
+            }
+
+            if (bmi > 18.5 && bmi < 25) {
+                progressBar.css('background-color', '#89bf24');
+            }
+
+            if (bmi >= 25) {
+                progressBar.css('background-color', '#ffd000');
+            }
+
+            /*Options
+            ---------------------*/
 
             if ($("select").find(":selected").val() == "1.2") {
                 let newCalories = parseFloat(maintainWeight*1.2).toFixed(2);

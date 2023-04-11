@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +23,7 @@
     <!-- Template Main JS File -->
     <script src="main.js"></script>
 </head>
+
 <body id="my-body">
     <div id="main-container" class="container">
         <form id="calculator">
@@ -55,16 +57,64 @@
             </div>
             <div id="results" class="container">
                 <h2>Intake Results</h2>
-                <p>Body Mass Index: <strong><span class="bmi"></span></strong></p>
-                <p>Required water intake: <strong><span class="water"></span> ml</strong></p>
-                <p>Calories to Add or Remove: <strong><span class="extra-calories"></span> kcal</strong></p>
-                <p>Total intake to maintain weight (daily): <strong><span class="maintain-weight"></span> kcal</strong></p>
-                <p>Total intake to gain weight (+1kg): <strong><span class="gain-weight"></span> kcal</strong></p>
-                <p>Total intake to lose weight (-1kg): <strong><span class="lose-weight"></span> kcal</strong></p>
-                <p>Grams of protein intake: <strong><span class="protein"></span> gr</strong></p>
+                <strong><p>Body Mass Index: <span class="bmi"></span>%</strong></p><i
+                    class="fa-regular fa-circle-question"></i>
+                <div class="bar-details">
+                    <P><strong>0%</strong></P>
+                    <P><strong>20%</strong></P>
+                    <P><strong>40%</strong></P>
+                </div>
+                <div class="bar">
+                    <div id="bmi-bar"></div>
+                </div>
+                <div class="bmi-info">
+                    <h3>Body Mass Index (BMI) is a measure of the relationship between a person's weight and height. It
+                        is calculated by dividing a person's weight in kilograms by their height in meters squared. BMI
+                        is a common way to assess whether a person has a healthy weight, as it can be an indicator of a
+                        person's body fat. </h3><br>
+                    <h3>
+                        <li>0 - 16: Very low weight</li>
+                        <li>16 - 18.5: Low weight</li>
+                        <li>18.5 - 25: Normal range (healthy)</li>
+                        <li>25-30: Overweight</li>
+                        <li>30 - 35: Obese Class I - Moderate obesity</li>
+                        <li>35 - 40: Obese Class II - Severe obesity</li>
+                        <li>40 and above: Obese Class III: Very severe obesity</li>
+                    </h3>
+                </div>
+                <strong><p>Required water intake: <span class="water"></span> ml</strong></p>
+                <h3>To calculate the required water intake, the total weight in kilograms is divided by 7, which is the
+                    average number of glasses of water that should be consumed, and then multiplied by 250 ml, which is
+                    approximately equivalent to one glass of water.</h3>
+                <strong><p>Basal Metabolic Rate (daily): <span class="maintain-weight"></span> kcal</strong></p>
+                <h3>Basal Metabolic Rate (BMR) is the amount of energy the body burns at rest to maintain basic bodily
+                    functions such as breathing, blood circulation, and body temperature. BMR is expressed in calories
+                    per day.</h3>
+                <h3>For men: BMR = (10 x weight in kg) + (6.25 x height in cm) - (5 x age in years) + 5</h3>
+                <h3>For women: BMR = (9.6 x weight in kg) + (1.8 x height in cm) - (4.7 x age in years) + 655</h3>
+                <strong><p>Calories to Add or Remove: <span class="extra-calories"></span> kcal</strong></p>
+                <h3>This is an approximate value of calories that you should add or subtract depending on the goal,
+                    whether it is to gain or lose weight. This value is calculated by multiplying the necessary calories
+                    of the Basal Metabolic Rate by 0.2.</h3>
+                <strong><p>Total intake to gain weight (+1kg): <span class="gain-weight"></span> kcal</strong></p>
+                <strong><p>Total intake to lose weight (-1kg): <span class="lose-weight"></span> kcal</strong></p>
+                <strong><p>Grams of protein intake: <span class="protein"></span> gr</strong></p>
+                <h3>The general recommendation for protein intake is around 0.8 grams per kilogram of body weight per
+                    day for healthy adults with sedentary lifestyles. However, for individuals who are more physically
+                    active or who are trying to build muscle, protein needs may be higher.</h3>
+
+                <h3>So, to calculate your protein needs, you would need to multiply your weight in kilograms by the
+                    appropriate factor based on your activity level and other individual factors.</h3>
+                <h3>
+                    <li>Little or no exercise (1 to 3 days a week) = 0.8gr per kg</li>
+                    <li>Moderate training (3 - 5 days a week) = 1.2gr per kg</li>
+                    <li>Intense training (6 - 7 days a week) = 1.6gr per kg</li>
+                    <li>Very Intense Training (6 - 7 days a week, 2 times a day) = 2gr per kg</li>
+                </h3>
                 <button id="secondary-btn" class="reset">Reset</button>
             </div>
         </form>
     </div>
 </body>
+
 </html>

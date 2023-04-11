@@ -59,7 +59,7 @@
 #main-container .container {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 40%;
     background-color: rgba(116, 109, 128, 0.2);
     align-items: left;
     justify-content: space-between;
@@ -154,6 +154,35 @@
 #results {
     display: none;
     overflow: hidden;
+}
+
+.bar {
+    position: relative;
+    border: 1px solid #5D4780;
+    border-radius: var(--containerRadius);
+}
+
+.bar div {
+    position: relative;
+    width: 0;
+    height: 20px;
+    border-radius: var(--containerRadius);
+    background-color: #B98EFF;
+    font-weight: bold;
+    font-size: 12px;
+    padding-top: 2px;
+    padding-left: 10px;
+}
+
+.bar-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#results h3 {
+    font-weight: lighter;
+    font-size: 14px;
 }
 
 /* Responsive

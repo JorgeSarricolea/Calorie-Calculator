@@ -23,6 +23,16 @@
     color: #5D4780;
 }
 
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#header .main-page {
+    width: fit-content;
+}
+
 #primary-btn {
     border-radius: var(--buttonsRadius);
     background-color: #B98EFF;
@@ -55,6 +65,7 @@
     font-weight: bold;
     color: #E8DAFF;
 }
+
 
 #main-container .container {
     display: flex;
@@ -192,4 +203,11 @@
     #main-container .container {
         width: 90%;
     }
+
+    #header {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: var(--generalGap);
+    }
+
 }

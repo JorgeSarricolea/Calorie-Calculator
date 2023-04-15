@@ -39,13 +39,14 @@
     width: 100%;
     padding: 10px 20px;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #primary-btn:hover {
     background-color: #001542;
     border-color: #001542;
     color: #fff;
-    font-weight: bold;
+    transition: 0.3s ease;
 }
 
 #secondary-btn {
@@ -56,12 +57,14 @@
     width: 100%;
     padding: 10px 20px;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #secondary-btn:hover {
     background-color: #001542;
     font-weight: bold;
     color: #fff;
+    transition: 0.3s ease;
 }
 
 

@@ -29,6 +29,7 @@
         <form id="calculator">
             <div id="user-info" class="container">
                 <h1>Calorie Calculator</h1>
+                <div class="separator"></div>
                 <h2>Choose an option</h2>
                 <div class="gender">
                     <label for="option-man" id="label">
@@ -40,7 +41,7 @@
                 </div>
                 <h2>Complete with your data</h2>
                 <label>How old are you?</label>
-                <input id="user-age" type="number" class="input">
+                <input id="user-age" type="number" class="input" placeholder="Ex. 22">
                 <label>How tall are you? (cm)</label>
                 <input id="user-height" type="number" class="input" placeholder="Ex. 175">
                 <label>What is your weight? (kg)</label>
@@ -54,10 +55,13 @@
                 </select>
                 <p><span class="error"></span></p>
                 <button id="primary-btn" class="general-submit">Submit</button>
-                <button id="secondary-btn" class="main-page" href="https://jorgesarricolea/porfolio">Main Page</button>
+                <div class="credits">
+                    <h3>Created by <span><a href="https://jorgesarricolea.com" target="_blank">Jorge Sarricolea</a></span></h3>
+                </div>
             </div>
             <div id="results" class="container">
                 <h2>Intake Results</h2>
+                <div class="separator"></div>
                 <strong><p>Body Mass Index: <span class="bmi"></span>%</strong></p>
                 <div class="bar-details">
                     <P><strong>0%</strong></P>

@@ -7,6 +7,14 @@
 }
 
 :root {
+    --h1_titles: 58px;
+    --h1_subtitles: 42px;
+    --h2_titles: 36px;
+    --h2_subtitles: 24px;
+    --h3_biggerBody: 18px;
+    --h3_normalBody: 16px;
+    --h3_smallerBody: 12px;
+
     --generalPadding: 20px;
     --generalGap: 20px;
 
@@ -18,42 +26,42 @@
 ---------------------*/
 
 #my-body {
-    background-color: #E8DAFF;
+    background-color: #001542;
     font-family: 'ExtraLight 200', sans-serif;
-    color: #5D4780;
+    color: #001542;
 }
 
 #primary-btn {
     border-radius: var(--buttonsRadius);
-    background-color: #B98EFF;
-    border-color: #B98EFF;
-    color: #5D4780;
+    background-color: #FFB30D;
+    border-color: #FFB30D;
+    color: #001542;
     width: 100%;
     padding: 10px 20px;
     cursor: pointer;
 }
 
 #primary-btn:hover {
-    background-color: #5D4780;
-    border-color: #5D4780;
-    color: #E8DAFF;
+    background-color: #001542;
+    border-color: #001542;
+    color: #fff;
     font-weight: bold;
 }
 
 #secondary-btn {
     border-radius: var(--buttonsRadius);
     background-color: transparent;
-    border-color: #5D4780;
-    color: #5D4780;
+    border-color: #001542;
+    color: #001542;
     width: 100%;
     padding: 10px 20px;
     cursor: pointer;
 }
 
 #secondary-btn:hover {
-    background-color: #5D4780;
+    background-color: #001542;
     font-weight: bold;
-    color: #E8DAFF;
+    color: #fff;
 }
 
 
@@ -61,7 +69,7 @@
     display: flex;
     flex-direction: column;
     width: 40%;
-    background-color: rgba(116, 109, 128, 0.2);
+    background-color: rgb(255, 255, 255, .8);;
     align-items: left;
     justify-content: space-between;
     margin: 20px auto;
@@ -81,7 +89,7 @@
 #user-info .container {
     display: flex;
     flex-direction: column;
-    background-color: rgba(116, 109, 128, 0.2);
+    background-color: rgb(255, 255, 255, .8);
     align-items: left;
     justify-content: space-between;
     padding: var(--generalPadding);
@@ -110,8 +118,7 @@
 }
 
 #user-info .input {
-    background-color: #E8DAFF;
-    color: #5D4780;
+    background-color: #fff;
     width: 40%;
     padding: 10px;
     border-radius: 10px;
@@ -130,8 +137,7 @@
 }
 
 #user-info select {
-    background-color: #E8DAFF;
-    color: #5D4780;
+    background-color: #fff;
     width: 70%;
     padding: 10px;
     border-radius: 10px;
@@ -140,8 +146,24 @@
 
 #user-info select option:checked {
     font-weight: bold;
-    background-color: #B98EFF;
-    color: #E8DAFF;
+    background-color: #FFB30D;
+    color: #001542;
+}
+
+.credits h3 {
+    text-align: center;
+    font-size: var(--h3_smallerBody);
+    font-weight: lighter;
+}
+
+.credits span {
+    font-weight: bold;
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    background: #001542;
 }
 
 .error {

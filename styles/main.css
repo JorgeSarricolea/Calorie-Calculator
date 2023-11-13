@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors */
+
+:root {
+  --lightGray: #cccccc;
+  --gray: #bfbfbf;
+  --darkGreen: #10403b;
+  --mintGreen: #8aa6a3;
+  --redAlert: red;
+}

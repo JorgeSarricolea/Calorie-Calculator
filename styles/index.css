@@ -1,0 +1,115 @@
+/* Main content */
+
+body {
+  background-color: var(--darkGreen);
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightGray);
+  color: var(--darkGreen);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  gap: 20px;
+  padding: 40px;
+  border-radius: 25px;
+}
+
+main h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--darkGreen);
+}
+
+/* Gender options */
+
+#options-container {
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+}
+
+#options-container input {
+  display: none;
+}
+
+#options-container h3 {
+  display: flex;
+  width: fit-content;
+  margin: 20px auto 20px;
+}
+
+#options {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-btn {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.radio-btn img {
+  width: 100%;
+  transition: 0.3 ease-in-out;
+}
+
+.radio-btn:hover,
+.option-selected {
+  font-weight: bold;
+  font-size: larger;
+}
+
+#options-container label {
+  border: none;
+  border-radius: 25px;
+}
+
+/* Buttons */
+
+#buttons-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#selectMessage {
+  color: var(--redAlert);
+}
+
+#next-btn {
+  display: flex;
+  background-color: var(--mintGreen);
+  color: var(--darkGreen);
+  width: fit-content;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#next-btn:hover {
+  background-color: var(--darkGreen);
+  color: var(--lightGray);
+  font-weight: bold;
+}

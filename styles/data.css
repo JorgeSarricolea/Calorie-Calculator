@@ -1,0 +1,25 @@
+#data-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#data-inputs h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#data-inputs input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--darkGreen);
+  padding: 10px 15px;
+  color: var(--darkGreen);
+}
+
+#data-inputs input:focus {
+  border-bottom: 2px solid var(--darkGreen);
+  outline: none;
+}

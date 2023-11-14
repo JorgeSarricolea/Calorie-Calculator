@@ -1,25 +1,5 @@
 /* Main content */
 
-body {
-  background-color: var(--darkGreen);
-  font-family: "Roboto", sans-serif;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--lightGray);
-  color: var(--darkGreen);
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40%;
-  gap: 20px;
-  padding: 40px;
-  border-radius: 25px;
-}
-
 main h1 {
   text-align: center;
   text-transform: uppercase;
@@ -79,37 +59,4 @@ main h1 {
 #options-container label {
   border: none;
   border-radius: 25px;
-}
-
-/* Buttons */
-
-#buttons-container {
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#selectMessage {
-  color: var(--redAlert);
-}
-
-#next-btn {
-  display: flex;
-  background-color: var(--mintGreen);
-  color: var(--darkGreen);
-  width: fit-content;
-  border: none;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 10px 35px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-#next-btn:hover {
-  background-color: var(--darkGreen);
-  color: var(--lightGray);
-  font-weight: bold;
 }

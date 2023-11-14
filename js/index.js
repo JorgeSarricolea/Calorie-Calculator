@@ -51,25 +51,24 @@ function showElements() {
 setTimeout(showElements, 4000);
 
 // Validate the option for the next button
+// Asegúrate de incluir esta función en tu archivo index.js antes de cualquier otra lógica.
 function validateOption(event) {
-  // Check if any option has been selected
-  var manOption = document.getElementById("man-option");
-  var womanOption = document.getElementById("woman-option");
-  var selectMessage = document.getElementById("selectMessage");
+  event.preventDefault();
 
-  if (manOption.checked || womanOption.checked) {
-    // Enable the button and redirect
-    document.getElementById("next-btn").href =
-      "https://kcal-calc.netlify.app/data.html";
-    // Clear any previous error message
-    selectMessage.textContent = "";
+  // Obtén la opción seleccionada
+  var selectedOption = document.querySelector('input[name="options"]:checked');
+
+  if (selectedOption) {
+    // Guarda el valor seleccionado en el localStorage
+    localStorage.setItem("selectedOption", selectedOption.id);
+
+    // Redirige a la siguiente página
+    window.location.href = "https://kcal-calc.netlify.app/data.html";
   } else {
-    // Displays an error message if no option is selected
-    selectMessage.textContent = "Please, select an option";
-    // Prevent the default behavior (e.g., form submission or link redirection)
-    event.preventDefault();
+    // Muestra un mensaje de error si no se selecciona ninguna opción
+    document.getElementById("selectMessage").innerText =
+      "Please select an option.";
 
-    // Después de 3 segundos (3000 milisegundos), oculta el mensaje de error
     setTimeout(function () {
       selectMessage.textContent = "";
     }, 3000);

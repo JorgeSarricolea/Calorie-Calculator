@@ -1,134 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <!-- Typing Effect src -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <title>Calorie Calculator</title>
+  </head>
+  <body>
+    <main id="main-container">
+      <header><h1>calorie calculator</h1></header>
+      <section id="gender-options">
+        <p><span class="mainInfo"></span></p>
+        <section id="options-container">
+          <header>
+            <h3>Choose an option</h3>
+          </header>
+          <form id="options">
+            <label class="radio-btn">
+              <input type="radio" name="options" id="man-option" />
+              <img src="assets/emojis/emoji-man.png" alt="" />
+              Man
+            </label>
 
-    <!-- Template Main CSS File -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Main Bootstrap Link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&family=Raleway:ital,wght@0,200;0,400;0,500;1,200;1,400;1,500&display=swap"
-        rel="stylesheet">
-
-    <!-- JQuery src -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="main.js"></script>
-</head>
-
-<body id="my-body">
-<div id="main-container" class="container">
-        <form id="calculator">
-            <div id="user-info" class="container">
-                <h1>Calorie Calculator</h1>
-                <div class="separator"></div>
-                <h2>Choose an option</h2>
-                <div class="gender">
-                    <label for="option-man" id="label">
-                        <input id="option-man" type="radio" name="gender" value="man"> Man
-                    </label>
-                    <label for="option-woman" id="label">
-                        <input id="option-woman" type="radio" name="gender" value="woman"> Woman
-                    </label>
-                </div>
-                <h2>Complete with your data</h2>
-                <label>How old are you?</label>
-                <input id="user-age" type="number" class="input" placeholder="Ex. 22">
-                <label>How tall are you? (cm)</label>
-                <input id="user-height" type="number" class="input" placeholder="Ex. 175">
-                <label>What is your weight? (kg)</label>
-                <input id="user-weight" type="number" class="input" placeholder="Ex. 75">
-                <h2>How much physical activity do you do?</h2>
-
-                <select class="form-select form-select-sm">
-                    <option value="1">Little or no exercise (1 to 3 days a week)</option>
-                    <option value="2">Moderate training (3 - 5 days a week)</option>
-                    <option value="3">Intense training (6 - 7 days a week)</option>
-                    <option value="4">Very Intense Training (6 - 7 days a week, 2 times a day)</option>
-                </select>
-
-                <p><span class="error"></span></p>
-                <button id="primary-btn" class="general-submit">Submit</button>
-                <div class="credits">
-                    <h3>Created by <span><a href="https://jorgesarricolea.com" target="_blank">Jorge Sarricolea</a></span></h3>
-                </div>
-            </div>
-            <div id="results" class="container">
-                <h2>Intake Results</h2>
-                <div class="separator"></div>
-                <strong><p>Body Mass Index: <span class="bmi"></span>%</strong></p>
-                <div class="bar-details">
-                    <P><strong>0%</strong></P>
-                    <P><strong>20%</strong></P>
-                    <P><strong>40%</strong></P>
-                </div>
-                <div class="bar">
-                    <div id="bmi-bar"></div>
-                </div>
-                <div class="bmi-info">
-                    <h3>Body Mass Index (BMI) is a measure of the relationship between a person's weight and height. It
-                        is calculated by dividing a person's weight in kilograms by their height in meters squared. BMI
-                        is a common way to assess whether a person has a healthy weight, as it can be an indicator of a
-                        person's body fat. </h3><br>
-                    <h3>
-                        <li>0 - 16: Very low weight</li>
-                        <li>16 - 18.5: Low weight</li>
-                        <li>18.5 - 25: Normal range (healthy)</li>
-                        <li>25-30: Overweight</li>
-                        <li>30 - 35: Obese Class I - Moderate obesity</li>
-                        <li>35 - 40: Obese Class II - Severe obesity</li>
-                        <li>40 and above: Obese Class III: Very severe obesity</li>
-                    </h3>
-                </div>
-
-                <strong><p>Required water intake: <span class="water"></span> ml</strong></p>
-                <h3>To calculate the required water intake, the total weight in kilograms is divided by 7, which is the
-                    average number of glasses of water that should be consumed, and then multiplied by 250 ml, which is
-                    approximately equivalent to one glass of water.</h3>
-
-                <strong><p>Basal Metabolic Rate (daily): <span class="maintain-weight"></span> kcal</strong></p>
-                <h3>Basal Metabolic Rate (BMR) is the amount of energy the body burns at rest to maintain basic bodily
-                    functions such as breathing, blood circulation, and body temperature. BMR is expressed in calories
-                    per day.</h3>
-                <h3>For men: BMR = (10 x weight in kg) + (6.25 x height in cm) - (5 x age in years) + 5</h3>
-                <h3>For women: BMR = (9.6 x weight in kg) + (1.8 x height in cm) - (4.7 x age in years) + 655</h3>
-
-                <strong><p>Calories to Add or Remove: <span class="extra-calories"></span> kcal</strong></p>
-                <h3>This is an approximate value of calories that you should add or subtract depending on the goal,
-                    whether it is to gain or lose weight. This value is calculated by multiplying the necessary calories
-                    of the Basal Metabolic Rate by 0.2.</h3>
-
-                <strong><p>Total intake to gain weight (+1kg): <span class="gain-weight"></span> kcal</strong></p>
-
-                <strong><p>Total intake to lose weight (-1kg): <span class="lose-weight"></span> kcal</strong></p>
-
-                <strong><p>Grams of protein intake: <span class="protein"></span> gr</strong></p>
-                <h3>The general recommendation for protein intake is around 0.8 grams per kilogram of body weight per
-                    day for healthy adults with sedentary lifestyles. However, for individuals who are more physically
-                    active or who are trying to build muscle, protein needs may be higher.</h3>
-
-                <h3>So, to calculate your protein needs, you would need to multiply your weight in kilograms by the
-                    appropriate factor based on your activity level and other individual factors.</h3>
-                <h3>
-                    <li>Little or no exercise (1 to 3 days a week) = 0.8gr per kg</li>
-                    <li>Moderate training (3 - 5 days a week) = 1.2gr per kg</li>
-                    <li>Intense training (6 - 7 days a week) = 1.6gr per kg</li>
-                    <li>Very Intense Training (6 - 7 days a week, 2 times a day) = 2gr per kg</li>
-                </h3>
-                <button id="secondary-btn" class="reset">Reset</button>
-            </div>
-        </form>
-    </div>
-</body>
+            <label class="radio-btn">
+              <input type="radio" name="options" id="woman-option" />
+              <img src="assets/emojis/emoji-woman.png" alt="" />
+              Woman
+            </label>
+          </form>
+        </section>
+        <div id="buttons-container">
+          <p id="selectMessage"></p>
+          <a
+            id="next-btn"
+            href="https://kcal-calc.netlify.app/result.html"
+            onclick="validateOption(event)"
+            >next</a
+          >
+        </div>
+      </section>
+    </main>
+    <!-- Main JS File -->
+    <script src="js/index.js"></script>
+  </body>
 </html>

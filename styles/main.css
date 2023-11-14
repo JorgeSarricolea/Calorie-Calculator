@@ -40,6 +40,7 @@ main {
 
 #buttons-container {
   margin-top: 40px;
+  gap: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,4 +68,13 @@ main {
   background-color: var(--darkGreen);
   color: var(--lightGray);
   font-weight: bold;
+}
+
+/* Media Querys */
+
+@media screen and (max-width: 600px) {
+  main {
+    padding: 20px;
+    width: 90%;
+  }
 }

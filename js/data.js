@@ -1,13 +1,8 @@
-function validateOption(event) {
+function validateInputs(event) {
   // Get the input elements
   var ageInput = document.getElementById("age");
   var heightInput = document.getElementById("height");
   var weightInput = document.getElementById("weight");
-
-  // Get the input elements
-  const age = document.getElementById("age").value;
-  const height = document.getElementById("height").value;
-  const weight = document.getElementById("weight").value;
 
   // Check if any field is empty
   if (
@@ -28,8 +23,16 @@ function validateOption(event) {
   } else {
     // If all fields are filled, clear any existing error messages
     document.getElementById("selectMessage").textContent = "";
+
+    // Store values in localStorage
+    localStorage.setItem("age", ageInput.value);
+    localStorage.setItem("weight", weightInput.value);
+    localStorage.setItem("height", heightInput.value);
+
+    // Redirect to the next page
+    window.location.href = "https://kcal-calc.netlify.app/result.html";
+
+    // Prevent the default action of the link
+    event.preventDefault();
   }
 }
-
-// Export the saved data
-export { age, height, weight };

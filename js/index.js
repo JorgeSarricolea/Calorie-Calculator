@@ -51,21 +51,20 @@ function showElements() {
 setTimeout(showElements, 4000);
 
 // Validate the option for the next button
-// Asegúrate de incluir esta función en tu archivo index.js antes de cualquier otra lógica.
 function validateOption(event) {
   event.preventDefault();
 
-  // Obtén la opción seleccionada
+  // Get the selected option
   var selectedOption = document.querySelector('input[name="options"]:checked');
 
   if (selectedOption) {
-    // Guarda el valor seleccionado en el localStorage
+    // Save the selected value to localStorage
     localStorage.setItem("selectedOption", selectedOption.id);
 
-    // Redirige a la siguiente página
+    // Redirects to the next page
     window.location.href = "https://kcal-calc.netlify.app/data.html";
   } else {
-    // Muestra un mensaje de error si no se selecciona ninguna opción
+    // Displays an error message if no option is selected
     document.getElementById("selectMessage").innerText =
       "Please select an option.";
 

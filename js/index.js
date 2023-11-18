@@ -62,7 +62,7 @@ function validateOption(event) {
     localStorage.setItem("selectedOption", selectedOption.id);
 
     // Redirects to the next page
-    window.location.href = "https://kcal-calc.netlify.app/data.html";
+    window.location.href = "data.html";
   } else {
     // Displays an error message if no option is selected
     document.getElementById("selectMessage").innerText =

@@ -30,7 +30,7 @@ function validateInputs(event) {
     localStorage.setItem("height", heightInput.value);
 
     // Redirect to the next page
-    window.location.href = "https://kcal-calc.netlify.app/result.html";
+    window.location.href = "results.html";
 
     // Prevent the default action of the link
     event.preventDefault();

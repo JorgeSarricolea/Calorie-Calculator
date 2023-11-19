@@ -3,6 +3,7 @@ const selectedOption = localStorage.getItem("selectedOption");
 const age = localStorage.getItem("age");
 const weight = localStorage.getItem("weight");
 const height = localStorage.getItem("height");
+const activityLevel = localStorage.getItem("activityLevel");
 
 // Calculate BMI
 function CalculateBMI(weight, height) {

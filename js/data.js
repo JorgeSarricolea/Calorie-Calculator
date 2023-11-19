@@ -1,14 +1,16 @@
 function validateInputs(event) {
-  // Get the input elements
+  // Get the input and select elements
   var ageInput = document.getElementById("age");
   var heightInput = document.getElementById("height");
   var weightInput = document.getElementById("weight");
+  var activityLevelSelect = document.getElementById("activity-level");
 
   // Check if any field is empty
   if (
     ageInput.value === "" ||
     heightInput.value === "" ||
-    weightInput.value === ""
+    weightInput.value === "" ||
+    activityLevelSelect.value === ""
   ) {
     // Shows an error message
     document.getElementById("selectMessage").textContent =
@@ -28,6 +30,7 @@ function validateInputs(event) {
     localStorage.setItem("age", ageInput.value);
     localStorage.setItem("weight", weightInput.value);
     localStorage.setItem("height", heightInput.value);
+    localStorage.setItem("activityLevel", activityLevelSelect.value);
 
     // Redirect to the next page
     window.location.href = "results.html";

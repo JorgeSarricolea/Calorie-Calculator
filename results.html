@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="styles/results.css" />
     <title>Your results!</title>
   </head>
   <body>
@@ -14,8 +16,18 @@
           <p>
             <span id="bmi-text"></span>
           </p>
+        </div>
+
+        <!-- BMI Category -->
+        <div class="container">
           <h3>Body Mass Index Category</h3>
-          <span id="bmi-category-text"></span>
+          <p>
+            <span id="bmi-category-text"></span>
+          </p>
+        </div>
+
+        <div class="progress-container">
+          <div id="progress-bar"></div>
         </div>
 
         <!-- MBR -->
@@ -24,6 +36,15 @@
           <p>
             <span id="mbr-text"></span>
           </p>
+        </div>
+
+        <!-- MBR + Physical activity -->
+        <div class="container">
+          <h3>Metabolic Basal Rate + Pysical Activity</h3>
+          <p>
+            <span id="mbr-activity-text"></span>
+          </p>
+          <p><span id="mbr-explanation"></span></p>
         </div>
       </section>
     </main>

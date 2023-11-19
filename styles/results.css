@@ -1,0 +1,26 @@
+.progress-container {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+#progress-bar {
+  height: 20px;
+  width: 0;
+}
+
+/* Colores según la categoría BMI */
+.red {
+  background-color: red;
+}
+.orange {
+  background-color: orange;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}

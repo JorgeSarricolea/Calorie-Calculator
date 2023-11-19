@@ -19,7 +19,7 @@ function CalculateBMI(weight, height) {
   return bmi.toFixed(2);
 }
 
-// Save the BMI
+// Print the BMI element
 const BMI = CalculateBMI(weight, height);
 elementById("bmi-text").textContent = BMI;
 
@@ -45,9 +45,9 @@ function getBMICategory(BMI) {
   return "Undefined Category"; // In case the BMI is not in any defined category
 }
 
-// Save the BMI category
-var BMIcategory = getBMICategory(BMI);
-console.log("BMI Category:", BMIcategory);
+// Print the BMI category element
+const BMIcategory = getBMICategory(BMI);
+elementById("bmi-category-text").textContent = BMIcategory;
 
 // Calculate MBR
 function CalculateMBR(age, height, weight, selectedOption) {

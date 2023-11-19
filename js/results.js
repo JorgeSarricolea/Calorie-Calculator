@@ -5,6 +5,9 @@ const weight = localStorage.getItem("weight");
 const height = localStorage.getItem("height");
 const activityLevel = localStorage.getItem("activityLevel");
 
+// Elements
+const elementById = document.getElementById.bind(document);
+
 // Calculate BMI
 function CalculateBMI(weight, height) {
   // Convert height to meters
@@ -17,8 +20,8 @@ function CalculateBMI(weight, height) {
 }
 
 // Save the BMI
-var BMI = CalculateBMI(weight, height);
-console.log("BMI: ", BMI);
+const BMI = CalculateBMI(weight, height);
+elementById("bmi-text").textContent = BMI;
 
 // BMI Scale
 const BMIScale = {

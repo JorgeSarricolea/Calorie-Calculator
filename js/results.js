@@ -1,17 +1,8 @@
 // Retrieves the selected value from localStorage
-var selectedOption = localStorage.getItem("selectedOption");
-var age = localStorage.getItem("age");
-var weight = localStorage.getItem("weight");
-var height = localStorage.getItem("height");
-
-// testing data in console
-if (selectedOption === "man-option") {
-  console.log("Selected option is Man");
-} else if (selectedOption === "woman-option") {
-  console.log("Selected option is Woman");
-} else {
-  console.log("No option selected");
-}
+const selectedOption = localStorage.getItem("selectedOption");
+const age = localStorage.getItem("age");
+const weight = localStorage.getItem("weight");
+const height = localStorage.getItem("height");
 
 // Calculate BMI
 function CalculateBMI(weight, height) {
@@ -53,3 +44,18 @@ function getBMICategory(BMI) {
 // Save the BMI category
 var BMIcategory = getBMICategory(BMI);
 console.log("BMI Category:", BMIcategory);
+
+// Calculate MBR
+function CalculateMBR(age, height, weight, selectedOption) {
+  if (selectedOption === "man-option") {
+    // Harris-Benedict Formula
+    return 10 * weight + 6.25 * height - 5 * age + 5;
+  } else if (selectedOption === "woman-option") {
+    // Harris-Benedict Formula
+    return 10 * weight + 6.25 * height - 5 * age + 161;
+  }
+}
+
+// Save the MBR
+var MBR = CalculateMBR(age, height, weight, selectedOption).toFixed(2);
+console.log("MBR: ", MBR);

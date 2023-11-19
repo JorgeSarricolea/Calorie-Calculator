@@ -13,11 +13,11 @@ function CalculateBMI(weight, height) {
   }
 
   var bmi = weight / height ** 2;
-  return bmi;
+  return bmi.toFixed(2);
 }
 
 // Save the BMI
-var BMI = CalculateBMI(weight, height).toFixed(2);
+var BMI = CalculateBMI(weight, height);
 console.log("BMI: ", BMI);
 
 // BMI Scale
@@ -50,13 +50,39 @@ console.log("BMI Category:", BMIcategory);
 function CalculateMBR(age, height, weight, selectedOption) {
   if (selectedOption === "man-option") {
     // Harris-Benedict Formula
-    return 10 * weight + 6.25 * height - 5 * age + 5;
+    var mbrMan = 10 * weight + 6.25 * height - 5 * age + 5;
+    return mbrMan.toFixed(2);
   } else if (selectedOption === "woman-option") {
     // Harris-Benedict Formula
-    return 10 * weight + 6.25 * height - 5 * age + 161;
+    var mbrWoman = 10 * weight + 6.25 * height - 5 * age + 161;
+    return mbrWoman.toFixed(2);
   }
 }
 
 // Save the MBR
-var MBR = CalculateMBR(age, height, weight, selectedOption).toFixed(2);
+var MBR = CalculateMBR(age, height, weight, selectedOption);
 console.log("MBR: ", MBR);
+
+// Physical activity scale
+const activityScale = {
+  sedentary: { value: 1.2 },
+  light: { value: 1.375 },
+  moderate: { value: 1.55 },
+  active: { value: 1.725 },
+  "very-active": { value: 2 },
+};
+
+// Function to determine MBR + Physical activity
+function getMBRactivity(MBR, activityLevel) {
+  if (activityLevel in activityScale) {
+    var physicalActivityValue = activityScale[activityLevel].value;
+    console.log(activityLevel, "| value: ", physicalActivityValue);
+    return MBR * physicalActivityValue;
+  } else {
+    return "Undefined Physical Activity";
+  }
+}
+
+// Save the MBR + Physical activity
+var MBRplusActivity = getMBRactivity(MBR, activityLevel).toFixed(2);
+console.log("MBR whit physical activity:", MBRplusActivity);

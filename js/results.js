@@ -63,8 +63,8 @@ function CalculateMBR(age, height, weight, selectedOption) {
 }
 
 // Save the MBR
-var MBR = CalculateMBR(age, height, weight, selectedOption);
-console.log("MBR: ", MBR);
+const MBR = CalculateMBR(age, height, weight, selectedOption);
+(elementById("mbr-text").textContent = `You need ${MBR} kcal everyday`), MBR;
 
 // Physical activity scale
 const activityScale = {

@@ -13,10 +13,6 @@ if (selectedOption === "man-option") {
   console.log("No option selected");
 }
 
-console.log("Age:", age);
-console.log("Weight:", weight);
-console.log("Height:", height);
-
 // Calculate BMI
 function CalculateBMI(weight, height) {
   // Convert height to meters

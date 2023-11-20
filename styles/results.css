@@ -8,7 +8,11 @@
   height: 20px;
 }
 
-/* Colores según la categoría BMI */
+#img-container img {
+  display: none;
+}
+
+/* Colors according to BMI category */
 .red {
   background-color: red;
 }

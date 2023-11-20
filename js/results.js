@@ -15,7 +15,7 @@ function CalculateBMI(weight, height) {
     height /= 100;
   }
 
-  var bmi = weight / height ** 2;
+  let bmi = weight / height ** 2;
   return bmi.toFixed(2);
 }
 
@@ -47,7 +47,7 @@ const BMIScale = {
 
 // Function to determine BMI category
 function getBMICategory(BMI) {
-  for (var key in BMIScale) {
+  for (let key in BMIScale) {
     if (BMI >= BMIScale[key].min && BMI <= BMIScale[key].max) {
       return BMIScale[key]; // Returns the entire BMI category object
     }
@@ -80,15 +80,21 @@ elementById(
   "bmi-category-text"
 ).textContent = `Category: ${categoryObject.name}, Range: ${categoryObject.min} - ${categoryObject.max}`;
 
-// Calculate MBR
+// Calculate MBR and show image
 function CalculateMBR(age, height, weight, selectedOption) {
   if (selectedOption === "man-option") {
     // Harris-Benedict Formula
-    var mbrMan = 10 * weight + 6.25 * height - 5 * age + 5;
+    let mbrMan = 10 * weight + 6.25 * height - 5 * age + 5;
+    // Show image
+    let manImage = elementById("man-image");
+    manImage.style.display = "flex";
     return mbrMan.toFixed(2);
   } else if (selectedOption === "woman-option") {
     // Harris-Benedict Formula
-    var mbrWoman = 10 * weight + 6.25 * height - 5 * age + 161;
+    let mbrWoman = 10 * weight + 6.25 * height - 5 * age + 161;
+    // Show image
+    let womanImage = elementById("woman-image");
+    womanImage.style.display = "flex";
     return mbrWoman.toFixed(2);
   }
 }
@@ -109,7 +115,7 @@ const activityScale = {
 // Function to determine MBR + Physical activity
 function getMBRactivity(MBR, activityLevel) {
   if (activityLevel in activityScale) {
-    var physicalActivityValue = activityScale[activityLevel].value;
+    let physicalActivityValue = activityScale[activityLevel].value;
     return MBR * physicalActivityValue;
   } else {
     return "Undefined Physical Activity";

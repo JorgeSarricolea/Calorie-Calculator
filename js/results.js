@@ -52,8 +52,27 @@ function getBMICategory(BMI) {
       return BMIScale[key]; // Returns the entire BMI category object
     }
   }
-  return { name: "Undefined Category", min: 0, max: 0 }; // In case the BMI is not in any defined category
+  return { name: "Undefined Category", min: 0, max: 0, color: "gray" }; // In case the BMI is not in any defined category
 }
+
+// Function to update progress bar and its color
+function updateProgressBar(BMI) {
+  const categoryObject = getBMICategory(BMI);
+
+  const progressBar = document.getElementById("progress-bar");
+  const progressContainer = document.querySelector(".progress-container");
+
+  progressBar.style.width = 0;
+  progressContainer.style.backgroundColor = "#ccc"; // Reset container background color
+
+  // Set progress bar width based on BMI category range
+  progressBar.style.width = BMI + "%";
+
+  // Set container background color based on BMI category color
+  progressBar.style.backgroundColor = categoryObject.color;
+}
+// Llamada a la función para actualizar la barra de progreso
+updateProgressBar(BMI);
 
 // Print the category
 const categoryObject = getBMICategory(BMI);

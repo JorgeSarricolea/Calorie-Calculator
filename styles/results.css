@@ -1,11 +1,11 @@
 .progress-container {
-  width: 100%;
-  background-color: #f1f1f1;
+  min-width: 100%;
+  min-height: 20px;
+  background-color: #ccc;
 }
 
 #progress-bar {
   height: 20px;
-  width: 0;
 }
 
 /* Colores según la categoría BMI */

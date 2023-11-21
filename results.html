@@ -4,44 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Main CSS File -->
+    <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/results.css" />
     <title>Your results!</title>
   </head>
   <body>
     <main>
-      <section id="main-container">
+      <!-- IMG person -->
+      <section id="img-container">
+        <img id="man-image" src="assets/man.png" alt="" />
+        <img id="woman-image" src="assets/woman.png" alt="" />
+      </section>
+
+      <section id="info-container">
         <!-- BMI -->
         <div class="container">
           <h3>Body Mass Index</h3>
-          <p>
-            <span id="bmi-text"></span>
-          </p>
-        </div>
-
-        <!-- IMG person -->
-        <div id="img-container">
-          <img id="man-image" src="assets/man.png" alt="" />
-          <img id="woman-image" src="assets/woman.png" alt="" />
-        </div>
-
-        <!-- BMI Category -->
-        <div class="container">
-          <h3>Body Mass Index Category</h3>
+          <!-- BMI Scale Bar -->
           <p>
             <span id="bmi-category-text"></span>
           </p>
-        </div>
-
-        <!-- BMI Scale Bar -->
-        <div class="progress-container">
-          <div id="progress-bar"></div>
+          <div class="progress-container">
+            <div id="progress-bar">
+              <p>
+                <span id="bmi-text"></span>
+              </p>
+            </div>
+          </div>
+          <div class="scale-data">
+            <p>0</p>
+            <p>25</p>
+            <p>50</p>
+            <p>75</p>
+            <p>100</p>
+          </div>
         </div>
 
         <!-- MBR -->
         <div class="container">
           <h3>Metabolic Basal Rate</h3>
           <p>
+            You need
             <span id="mbr-text"></span>
+            everyday
           </p>
         </div>
 
@@ -49,7 +54,12 @@
         <div class="container">
           <h3>Metabolic Basal Rate + Pysical Activity</h3>
           <p>
-            <span id="mbr-activity-text"></span>
+            Pysical activity:
+            <span id="physical-activity-text"></span>
+          </p>
+          <p>
+            Calorie intake:
+            <span id="new-mbr-text"></span>
           </p>
           <p><span id="mbr-explanation"></span></p>
         </div>
@@ -58,13 +68,34 @@
         <div class="container">
           <h3>If you need a Calorie Surplus</h3>
           <p>
-            <span id="surplus-text"></span>
+            You need
+            <span id="surplus-text"></span> to incrase approximately 1kg per
+            week.
           </p>
+          <p>
+            <span>This value gets by adding between 500 to 1,000 kcal.</span>
+          </p>
+        </div>
+
+        <!-- Surplus and Deficit -->
+        <div class="container">
           <h3>If you need a Calorie Deficit</h3>
-          <p><span id="deficit-text"></span></p>
+          <p>
+            You need <span id="deficit-text"></span> to lose approximately 1kg
+            per week.
+          </p>
+          <p>
+            <span
+              >This value gets by subtracting between 500 to 1,000 kcal.</span
+            >
+          </p>
         </div>
       </section>
     </main>
+    <footer>
+      <p>Powered by</p>
+      <a href="https//jorgesarricolea.com" target="_blank">Jorge Sarricolea</a>
+    </footer>
     <!-- Main JS File -->
     <script src="js/results.js"></script>
   </body>

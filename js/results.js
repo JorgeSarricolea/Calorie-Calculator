@@ -52,7 +52,7 @@ function getBMICategory(BMI) {
       return BMIScale[key]; // Returns the entire BMI category object
     }
   }
-  return { name: "Undefined Category", min: 0, max: 0, color: "gray" }; // In case the BMI is not in any defined category
+  return { name: "Undefined Category", min: 0, max: 0, color: "ccc" }; // In case the BMI is not in any defined category
 }
 
 // Function to update progress bar and its color
@@ -76,9 +76,7 @@ updateProgressBar(BMI);
 
 // Print the category
 const categoryObject = getBMICategory(BMI);
-elementById(
-  "bmi-category-text"
-).textContent = `Category: ${categoryObject.name}, Range: ${categoryObject.min} - ${categoryObject.max}`;
+elementById("bmi-category-text").textContent = `${categoryObject.name}`;
 
 // Calculate MBR and show image
 function CalculateMBR(age, height, weight, selectedOption) {
@@ -94,18 +92,22 @@ function CalculateMBR(age, height, weight, selectedOption) {
     let mbrWoman = 10 * weight + 6.25 * height - 5 * age + 161;
     // Show image
     let womanImage = elementById("woman-image");
-    womanImage.style.display = "flex";
+    if (window.innerWidth <= 600) {
+      womanImage.style.display = "none"; // Hide the image if the screen is less than 600 pixels
+    } else if (window.innerWidth > 600) {
+      womanImage.style.display = "flex";
+    }
     return mbrWoman.toFixed(2);
   }
 }
 
 // Print the MBR element
 const MBR = CalculateMBR(age, height, weight, selectedOption);
-elementById("mbr-text").textContent = `You need ${MBR} kcal everyday`;
+elementById("mbr-text").textContent = `${MBR} kcal`;
 
 // Physical activity scale
 const activityScale = {
-  sedentary: { value: 1.2, name: "Sedentary" },
+  sedentary: { value: 1, name: "Sedentary" },
   light: { value: 1.375, name: "Light workout" },
   moderate: { value: 1.55, name: "Moderate workout" },
   active: { value: 1.725, name: "Active workout" },
@@ -125,8 +127,9 @@ function getMBRactivity(MBR, activityLevel) {
 // Print the MBR + Physical activity element
 const MBRplusActivity = parseFloat(getMBRactivity(MBR, activityLevel));
 elementById(
-  "mbr-activity-text"
-).textContent = `Physical Activity: ${activityScale[activityLevel].name}. You need ${MBRplusActivity} kcal`;
+  "physical-activity-text"
+).textContent = `${activityScale[activityLevel].name}`;
+elementById("new-mbr-text").textContent = `${MBRplusActivity} kcal`;
 elementById(
   "mbr-explanation"
 ).textContent = `This value gets by multiply ${activityScale[activityLevel].value} by your current Metabolic Basal Rate.`;
@@ -135,10 +138,5 @@ elementById(
 const surplus = MBRplusActivity + 500;
 const deficit = MBRplusActivity - 500;
 
-elementById(
-  "surplus-text"
-).textContent = `You need ${surplus} kcal to increase approximately 1kg per week.`;
-
-elementById(
-  "deficit-text"
-).textContent = `You need ${deficit} kcal to lose approximately 1kg per week.`;
+elementById("surplus-text").textContent = `${surplus} kcal`;
+elementById("deficit-text").textContent = `${deficit} kcal`;

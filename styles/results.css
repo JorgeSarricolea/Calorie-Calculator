@@ -1,18 +1,67 @@
+main {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  align-items: center;
+  background-color: transparent;
+  gap: 100px;
+}
+
+#info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--mintGreen);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.container h3 {
+  display: flex;
+  width: 100%;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--darkGreen);
+}
+
+.container span {
+  font-weight: bold;
+}
+
 .progress-container {
   min-width: 100%;
   min-height: 20px;
   background-color: #ccc;
+  border-radius: 8px;
 }
 
 #progress-bar {
-  height: 20px;
+  display: flex;
+  height: fit-content;
+  padding: 8px;
+  font-size: small;
+  justify-content: end;
+  border-radius: 8px;
+}
+
+.scale-data {
+  display: flex;
+  justify-content: space-between;
 }
 
 #img-container img {
   display: none;
+  width: 100%;
+  filter: drop-shadow(10px -2px 2px var(--mintGreen));
 }
 
 /* Colors according to BMI category */
+
 .red {
   background-color: red;
 }
@@ -27,4 +76,27 @@
 }
 .blue {
   background-color: blue;
+}
+
+footer {
+  display: flex;
+  color: var(--mintGreen);
+  gap: 3px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+footer a {
+  color: var(--mintGreen);
+  font-weight: bold;
+}
+
+/* Media Querys */
+
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+    padding: 20px;
+    width: 90%;
+  }
 }

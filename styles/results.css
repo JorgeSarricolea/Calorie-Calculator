@@ -3,7 +3,6 @@ main {
   flex-direction: column;
   gap: 20px;
   background-color: transparent;
-  margin: 0;
 }
 
 .container {
@@ -40,6 +39,7 @@ main {
   font-size: small;
   justify-content: end;
   border-radius: 8px;
+  max-width: 100%;
 }
 
 .scale-data {

@@ -78,15 +78,16 @@ main {
   background-color: blue;
 }
 
-footer {
+header {
   display: flex;
   color: var(--mintGreen);
   gap: 3px;
-  margin: 20px auto;
-  justify-content: center;
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
 }
 
-footer a {
+header a {
   color: var(--mintGreen);
   font-weight: bold;
 }
@@ -95,8 +96,15 @@ footer a {
 
 @media screen and (max-width: 600px) {
   main {
+    margin-top: 40px;
     flex-direction: column;
     padding: 20px;
     width: 90%;
+  }
+
+  header {
+    position: unset;
+    margin-top: 20px;
+    justify-content: center;
   }
 }

@@ -123,10 +123,22 @@ function getMBRactivity(MBR, activityLevel) {
 }
 
 // Print the MBR + Physical activity element
-const MBRplusActivity = getMBRactivity(MBR, activityLevel).toFixed(2);
+const MBRplusActivity = parseFloat(getMBRactivity(MBR, activityLevel));
 elementById(
   "mbr-activity-text"
 ).textContent = `Physical Activity: ${activityScale[activityLevel].name}. You need ${MBRplusActivity} kcal`;
 elementById(
   "mbr-explanation"
 ).textContent = `This value gets by multiply ${activityScale[activityLevel].value} by your current Metabolic Basal Rate.`;
+
+// Print the caloric surplus and deficit
+const surplus = MBRplusActivity + 500;
+const deficit = MBRplusActivity - 500;
+
+elementById(
+  "surplus-text"
+).textContent = `You need ${surplus} kcal to increase approximately 1kg per week.`;
+
+elementById(
+  "deficit-text"
+).textContent = `You need ${deficit} kcal to lose approximately 1kg per week.`;

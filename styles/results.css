@@ -4,7 +4,6 @@ main {
   width: fit-content;
   align-items: center;
   background-color: transparent;
-  gap: 100px;
 }
 
 #info-container {
@@ -54,37 +53,12 @@ main {
   justify-content: space-between;
 }
 
-#img-container img {
-  display: none;
-  width: 100%;
-  filter: drop-shadow(10px -2px 2px var(--mintGreen));
-}
-
-/* Colors according to BMI category */
-
-.red {
-  background-color: red;
-}
-.orange {
-  background-color: orange;
-}
-.yellow {
-  background-color: yellow;
-}
-.green {
-  background-color: green;
-}
-.blue {
-  background-color: blue;
-}
-
 header {
   display: flex;
   color: var(--mintGreen);
+  margin-top: 20px;
   gap: 3px;
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
+  justify-content: center;
 }
 
 header a {
@@ -96,15 +70,13 @@ header a {
 
 @media screen and (max-width: 600px) {
   main {
-    margin-top: 40px;
+    margin-top: 85px;
     flex-direction: column;
     padding: 20px;
     width: 90%;
   }
 
   header {
-    position: unset;
-    margin-top: 20px;
     justify-content: center;
   }
 }

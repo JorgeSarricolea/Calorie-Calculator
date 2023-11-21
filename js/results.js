@@ -83,20 +83,10 @@ function CalculateMBR(age, height, weight, selectedOption) {
   if (selectedOption === "man-option") {
     // Harris-Benedict Formula
     let mbrMan = 10 * weight + 6.25 * height - 5 * age + 5;
-    // Show image
-    let manImage = elementById("man-image");
-    manImage.style.display = "flex";
     return mbrMan.toFixed(2);
   } else if (selectedOption === "woman-option") {
     // Harris-Benedict Formula
     let mbrWoman = 10 * weight + 6.25 * height - 5 * age + 161;
-    // Show image
-    let womanImage = elementById("woman-image");
-    if (window.innerWidth <= 600) {
-      womanImage.style.display = "none"; // Hide the image if the screen is less than 600 pixels
-    } else if (window.innerWidth > 600) {
-      womanImage.style.display = "flex";
-    }
     return mbrWoman.toFixed(2);
   }
 }

@@ -11,10 +11,12 @@
     <title>Calorie Calculator</title>
   </head>
   <body>
-    <main id="main-container">
-      <header><h1>calorie calculator</h1></header>
-      <section id="gender-options">
-        <p><span class="mainInfo"></span></p>
+    <main>
+      <section id="main-container">
+        <header><h1>calorie calculator</h1></header>
+        <section id="gender-options">
+          <p><span class="mainInfo"></span></p>
+        </section>
         <section id="options-container">
           <header>
             <h3>Choose an option</h3>
@@ -32,13 +34,13 @@
               Woman
             </label>
           </form>
+          <div id="buttons-container">
+            <p id="selectMessage"></p>
+            <a id="next-btn" href="data.html" onclick="validateOption(event)"
+              >next</a
+            >
+          </div>
         </section>
-        <div id="buttons-container">
-          <p id="selectMessage"></p>
-          <a id="next-btn" href="data.html" onclick="validateOption(event)"
-            >next</a
-          >
-        </div>
       </section>
     </main>
     <!-- Main JS File -->

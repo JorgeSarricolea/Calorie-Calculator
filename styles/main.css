@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: var(--darkGreen);
   font-family: "Roboto", sans-serif;
+  background-color: var(--darkGreen);
 }
 
 /* Colors */
@@ -22,17 +22,11 @@ body {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
   background-color: var(--lightGray);
   color: var(--darkGreen);
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin: 20px auto;
+  padding: 20px;
   width: 40%;
-  gap: 20px;
-  padding: 40px;
   border-radius: 25px;
 }
 
@@ -72,9 +66,19 @@ main {
 
 /* Media Querys */
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   main {
-    padding: 20px;
-    width: 90%;
+    width: fit-content;
+    margin: 20px;
+  }
+
+  #buttons-container {
+    flex-direction: column;
+  }
+
+  #next-btn,
+  #next-btn a {
+    width: 100%;
+    justify-content: center;
   }
 }

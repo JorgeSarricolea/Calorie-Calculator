@@ -1,5 +1,3 @@
-/* Main content */
-
 main h1 {
   text-align: center;
   text-transform: uppercase;
@@ -8,6 +6,13 @@ main h1 {
 }
 
 /* Gender options */
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
 
 #options-container {
   flex-direction: column;

@@ -1,9 +1,13 @@
+header h3 {
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--darkGreen);
+  margin-bottom: 20px;
+}
+
 #data-inputs {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 80%;
-  margin: 0 auto;
 }
 
 #data-inputs h3 {
@@ -24,12 +28,4 @@ select {
 select:focus {
   border-bottom: 2px solid var(--darkGreen);
   outline: none;
-}
-
-/* Media Querys */
-
-@media screen and (max-width: 600px) {
-  #data-inputs {
-    width: 90%;
-  }
 }

@@ -1,15 +1,9 @@
 main {
   display: flex;
-  flex-direction: row;
-  width: fit-content;
-  align-items: center;
-  background-color: transparent;
-}
-
-#info-container {
-  display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: transparent;
+  margin: 0;
 }
 
 .container {
@@ -53,30 +47,15 @@ main {
   justify-content: space-between;
 }
 
-header {
+footer {
   display: flex;
   color: var(--mintGreen);
-  margin-top: 20px;
   gap: 3px;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
-header a {
+footer a {
   color: var(--mintGreen);
   font-weight: bold;
-}
-
-/* Media Querys */
-
-@media screen and (max-width: 600px) {
-  main {
-    margin-top: 85px;
-    flex-direction: column;
-    padding: 20px;
-    width: 90%;
-  }
-
-  header {
-    justify-content: center;
-  }
 }
